@@ -47,11 +47,13 @@ function generatePassword() {
       alert("Please allow atleast one character set");
     }
   }
+  // Loops the amount of times the user selected earlier for input
   for (var i = 0; i < input; i++) { 
+    // appends a random character from allowed character sets to the password
     password = password.concat(allowedChar[Math.floor(Math.random() * allowedChar.length)]);
   }
   return password;
-  }
+}
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
