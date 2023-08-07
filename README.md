@@ -11,7 +11,7 @@ GitHub Pages link: https://prosentint.github.io/JS-password-generator/
 
 ## Usage
 
-
+This webpage serves as a password generator. Click on the generate password button to be prompted to input a value. you must input a value of atleast 8 and no more than 128 to continue, otherwise you can hit cancel at this prompt to cancel the program. After entering a valid value as the length of your generated password 4 prompts in succession will ask you wether or not you wish to include the character sets of upper case letters, lower case letter, numbers, and special characters respectively. If no sets are selected the four prompts will reappear until atleast one is allowed. After atleast one char set is permitted then a random password fitting the selected specifications is generated and displayed in the text box. Hit the button to generate another.
 
 ![Screenshot of Page](./assets/images/screenshot.JPG)
 
