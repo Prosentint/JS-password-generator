@@ -15,10 +15,13 @@ function generatePassword() {
     while (!valid){
       var input = prompt("Choose a length of at least 8 characters and no more than 128 characters");
       if ((input >= 8) && (input <= 128) ){
+        // Breaks loop if valid inpuit is given
         valid = true;
-      } else if (input == "") {
+      } else if (input == null) {
+        // Cancels program if cancel is hit
         return;
       } else {
+        // resets input
         alert("This is not a valid input please try again.");
       }
     }
