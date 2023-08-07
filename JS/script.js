@@ -6,6 +6,24 @@ var lowerCase = upperCase.map(element => {
 var num = ["0","1","2","3","4","5","6","7","8","9"];
 var special = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', '}', '|', ';', ':', "'", '"', ',', '.', '<', '>', '/', '?', '`', '~']
 
+// Fuction that determines which set of characters to use, and how long the password is and then generates the password
+function generatePassword() {
+    // Creates a blank array that will allow us to add accepted character sets to
+    var allowedChar = [];
+    var valid = false;
+    // Continues asking for a length until a valid one is obtained
+    while (!valid){
+      var input = prompt("Choose a length of at least 8 characters and no more than 128 characters");
+      if ((input >= 8) && (input <= 128) ){
+        valid = true;
+      } else if (input == "") {
+        return;
+      } else {
+        alert("This is not a valid input please try again.");
+      }
+    }
+  }
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
