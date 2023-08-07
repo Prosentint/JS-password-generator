@@ -35,8 +35,16 @@ function generatePassword() {
       }
     }
 
-    allowedChar = allowedChar.concat(useChar("Upper Case", upperCase));
-    console.log(allowedChar);
+    // Continues asking which sets to use until atleast one of the four sets is selected
+    while (allowedChar.length === 0) { 
+      allowedChar = allowedChar.concat(useChar("Upper Case", upperCase));
+      allowedChar = allowedChar.concat(useChar("Lower case", upperCase));
+      allowedChar = allowedChar.concat(useChar("Numerical", upperCase));
+      allowedChar = allowedChar.concat(useChar("Special", upperCase));
+      if (allowedChar.length === 0){
+        alert("Please allow atleast one character set");
+      }
+    }
 
   }
 
