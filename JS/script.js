@@ -3,7 +3,7 @@ var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P"
 var lowerCase = upperCase.map(element => {
   return element.toLowerCase();
 });
-var num = ["0","1","2","3","4","5","6","7","8","9"];
+var numbers = ["0","1","2","3","4","5","6","7","8","9"];
 var special = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', '}', '|', ';', ':', "'", '"', ',', '.', '<', '>', '/', '?', '`', '~']
 
 // A general function that asks the user a question and if yes reutrns the array it was given, otherwise it returns an empty array
@@ -38,13 +38,15 @@ function generatePassword() {
     // Continues asking which sets to use until atleast one of the four sets is selected
     while (allowedChar.length === 0) { 
       allowedChar = allowedChar.concat(useChar("Upper Case", upperCase));
-      allowedChar = allowedChar.concat(useChar("Lower case", upperCase));
-      allowedChar = allowedChar.concat(useChar("Numerical", upperCase));
-      allowedChar = allowedChar.concat(useChar("Special", upperCase));
+      allowedChar = allowedChar.concat(useChar("Lower Case", lowerCase));
+      allowedChar = allowedChar.concat(useChar("Numerical", numbers));
+      allowedChar = allowedChar.concat(useChar("Special", special));
       if (allowedChar.length === 0){
         alert("Please allow atleast one character set");
       }
     }
+    console.log(allowedChar);
+
 
   }
 
