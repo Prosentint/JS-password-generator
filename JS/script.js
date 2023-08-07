@@ -6,6 +6,15 @@ var lowerCase = upperCase.map(element => {
 var num = ["0","1","2","3","4","5","6","7","8","9"];
 var special = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', '}', '|', ';', ':', "'", '"', ',', '.', '<', '>', '/', '?', '`', '~']
 
+// A general function that asks the user a question and if yes reutrns the array it was given, otherwise it returns an empty array
+function useChar(question, set){
+  if (confirm("Would you like to use "+ question + " characters in your password?")){
+    return set;
+  } else {
+    return [];
+  }
+}
+
 // Fuction that determines which set of characters to use, and how long the password is and then generates the password
 function generatePassword() {
     // Creates a blank array that will allow us to add accepted character sets to
@@ -25,6 +34,10 @@ function generatePassword() {
         alert("This is not a valid input please try again.");
       }
     }
+
+    allowedChar = allowedChar.concat(useChar("Upper Case", upperCase));
+    console.log(allowedChar);
+
   }
 
 // Assignment Code
@@ -32,7 +45,6 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  console.log("here");
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
